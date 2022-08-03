@@ -18,7 +18,7 @@ net.setInputSwanpRB(True)
 classıd,confs,bbox=net.detect(img,confThreshold=0.5)
 
 print(classId,bbox)
-for classıd,confidence,bo in zip(classIds.flatten(),confs.flatten(),bbox):
+for classıd,confidence,box in zip(classIds.flatten(),confs.flatten(),bbox):
     cv2.rectange(img,box,color=(0,255,0),thickness=3)
     cv2.putText(img,classnames[classıd-1].upper(),(box[0]+10,box[1]+30),
                 cv2.FONT_HERSHEY_COMPLEX,1,(0,255,0),2)
